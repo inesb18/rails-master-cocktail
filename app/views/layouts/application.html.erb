@@ -12,6 +12,16 @@
   </head>
 
   <body>
+
+    <div class="banner">
+      <%= link_to cocktails_path class: "master-cocktails-list" do %>
+        Master cocktails
+      <% end %>
+      <%= link_to new_cocktail_path class: "add-cocktail" do %>
+        Add a new cocktail
+      <% end %>
+    </div>
+
     <%= yield %>
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
