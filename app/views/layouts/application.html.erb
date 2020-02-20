@@ -13,16 +13,25 @@
 
   <body>
 
-    <div class="banner">
+    <div class="nav-bar-master-cocktail">
+
       <%= link_to cocktails_path class: "master-cocktails-list" do %>
         Master cocktails
       <% end %>
       <%= link_to new_cocktail_path class: "add-cocktail" do %>
         Add a new cocktail
       <% end %>
+
     </div>
 
     <%= yield %>
+
+    </div>
+
+    <div class="footer-master-cocktail">
+      This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    </div>
+
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

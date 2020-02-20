@@ -5,6 +5,7 @@ class DosesController < ApplicationController
   end
 
   def create
+    raise
     @dose = Dose.new(dose_description_and_ingredient)
     @cocktail = set_cocktail
     @dose.cocktail = @cocktail

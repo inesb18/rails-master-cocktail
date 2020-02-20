@@ -1,9 +1,30 @@
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail_path(cocktail) do %>
-        <%= cocktail.name %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class="banner-master-cocktail">
+
+  <div class="container">
+    <h1>Master Cocktail</h1>
+    <p>Be traditional, be creative, be bold.</p>
+    <%= link_to new_cocktail_path class: "add-cocktail" do %>
+      Add a new cocktail
+    <% end %>
+  </div>
+
+</div>
+
+<div class="page-container">
+
+  <div class="cocktails-list">
+    <% @cocktails.each do |cocktail| %>
+
+      <div class="cocktail-card">
+
+        <%= link_to cocktail_path(cocktail) do %>
+          <%= cocktail.name %>
+        <% end %>
+
+      </div>
+
+    <% end %>
+  </div>
+
+</div>
+

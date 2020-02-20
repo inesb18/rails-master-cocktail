@@ -1,4 +1,28 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="banner-master-cocktail">
+
+  <div class="container">
+    <h1>Master Cocktail</h1>
+    <p>Be traditional, be creative, be bold.</p>
+  </div>
+
+</div>
+
+<div class="banner-cocktail">
+  <h1> <%= @cocktail.name %> </h1>
+</div>
+
+<div class="page-container">
+
+  <div class="new-cocktail">
+
+    <h2>Add a cocktail</h2>
+
+    <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit %>
+    <% end %>
+
+  </div>
+
+</div>
+

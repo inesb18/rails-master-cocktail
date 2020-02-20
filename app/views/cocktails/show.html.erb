@@ -1,16 +1,38 @@
-<%= @cocktail.name %>
-<ul>
-  <% @cocktail.doses.each do |dose|%>
-    <li>
-      <%= dose.ingredient.name %>: <%= dose.description %>
-      <%= link_to cocktail_dose_path(@cocktail,dose), method: "delete" do %>
-        Delete
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class="banner-cocktail">
+  <h1> <%= @cocktail.name %> </h1>
+</div>
 
-<%= link_to new_cocktail_dose_path(@cocktail), class: "add-dose" do %>
-  Add a new ingredient
-<% end %>
+<div class="page-container">
+
+  <div class="ingredients-of-cocktail">
+
+    <h2>Ingredients</h2>
+
+    <% if @cocktail.doses.empty? %>
+      <p>No ingredient yet.</p>
+    <% else %>
+
+      <ul>
+
+        <% @cocktail.doses.each do |dose|%>
+
+          <li>
+            <p> <strong> <%= dose.ingredient.name %>: </strong> <%= dose.description %> </p>
+            <%= link_to cocktail_dose_path(@cocktail,dose), method: "delete" do %>
+              Delete
+            <% end %>
+          </li>
+
+        <% end %>
+      </ul>
+
+    <% end %>
+
+    <%= link_to new_cocktail_dose_path(@cocktail), class: "add-dose" do %>
+      Add a new ingredient
+    <% end %>
+
+  </div>
+
+</div>
 
