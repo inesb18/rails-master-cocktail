@@ -1,0 +1,17 @@
+.footer-master-cocktail {
+  margin-top: 50px;
+  background: $pink;
+  align-items: center;
+  height: 100px;
+  padding: 0px 50px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-master-cocktail .fa-heart {
+  color: $dark-green;
+  margin: 0 8px;
+}

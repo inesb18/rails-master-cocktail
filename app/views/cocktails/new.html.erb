@@ -7,11 +7,7 @@
 
 </div>
 
-<div class="banner-cocktail">
-  <h1> <%= @cocktail.name %> </h1>
-</div>
-
-<div class="page-container">
+<div class="container">
 
   <div class="new-cocktail">
 
@@ -19,7 +15,7 @@
 
     <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name %>
-      <%= f.button :submit %>
+      <%= f.button :submit, class:"btn-heavy" %>
     <% end %>
 
   </div>

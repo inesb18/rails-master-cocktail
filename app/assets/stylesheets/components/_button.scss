@@ -1,0 +1,32 @@
+.btn-light {
+  background-color: rgba(200,200,200,0.2);
+  color: $green;
+  border: 1px solid $green;
+  border-radius: 3px;
+  padding: 6px 14px;
+  &:hover {
+    color: $dark-green;
+    text-decoration: none;
+    background-color: rgba(200,200,200,0.2);
+    border: 1px solid $dark-green;
+    border-radius: 3px;
+    padding: 6px 14px;
+  }
+}
+
+.btn-heavy {
+  background-color: $light-green;
+  color: $white;
+  border: 1px solid $green;
+  border-radius: 3px;
+  padding: 6px 14px;
+  &:hover {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background-color: $pink;
+    border: 1px solid $pink;
+    border-radius: 3px;
+    padding: 6px 14px;
+  }
+}

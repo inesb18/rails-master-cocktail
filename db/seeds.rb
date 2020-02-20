@@ -23,12 +23,12 @@ end
 Ingredient.create(name: 'Ice')
 Ingredient.create(name: 'Mint')
 Ingredient.create(name: 'Club soda')
+Ingredient.create(name: 'Cachaça')
 
 
-# 1 cocktail to start with!
+# Mojito cocktail
 
 mojito = Cocktail.create(name: 'Mojito')
-
 
 Dose.create(description: '20 leaves',
             cocktail: mojito,
@@ -52,3 +52,40 @@ Dose.create(description: '20 cubes',
 Dose.create(description: '1 (quartered)',
             cocktail: mojito,
             ingredient: Ingredient.where(name: 'Lime').first)
+
+# Cosmopolitan cocktail
+
+cosmopolitan = Cocktail.create(name: 'Cosmopolitan')
+
+Dose.create(description: '45ml',
+            cocktail: cosmopolitan,
+            ingredient: Ingredient.where(name: 'Lemon vodka').first)
+Dose.create(description: '15ml',
+            cocktail: cosmopolitan,
+            ingredient: Ingredient.where(name: 'Triple sec').first)
+Dose.create(description: '30ml',
+            cocktail: cosmopolitan,
+            ingredient: Ingredient.where(name: 'Cranberry juice').first)
+Dose.create(description: '10ml',
+            cocktail: cosmopolitan,
+            ingredient: Ingredient.where(name: 'Lime juice').first)
+Dose.create(description: 'some cubes',
+            cocktail: cosmopolitan,
+            ingredient: Ingredient.where(name: 'Ice').first)
+
+# Cosmopolitan cocktail
+
+caipirinha = Cocktail.create(name: 'Caipirinha')
+
+Dose.create(description: '2, chopped into wedges',
+            cocktail: caipirinha,
+            ingredient: Ingredient.where(name: 'Lime').first)
+Dose.create(description: '6 tbsp',
+            cocktail: caipirinha,
+            ingredient: Ingredient.where(name: 'Sugar').first)
+Dose.create(description: '200ml',
+            cocktail: caipirinha,
+            ingredient: Ingredient.where(name: 'Cachaça').first)
+Dose.create(description: 'few handfuls (crushed)',
+            cocktail: caipirinha,
+            ingredient: Ingredient.where(name: 'Ice').first)

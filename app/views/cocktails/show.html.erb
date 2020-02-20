@@ -1,38 +1,44 @@
-<div class="banner-cocktail">
+<div class="banner-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?<%= @cocktail.name %>,cocktail)">
   <h1> <%= @cocktail.name %> </h1>
 </div>
 
-<div class="page-container">
+<div class="container">
 
-  <div class="ingredients-of-cocktail">
+  <div class="grid-ingredients-cocktail">
 
-    <h2>Ingredients</h2>
+    <div class="card-ingredients-of-cocktail card-grid-ingredients-cocktail">
 
-    <% if @cocktail.doses.empty? %>
-      <p>No ingredient yet.</p>
-    <% else %>
+      <h2>Ingredients</h2>
 
-      <ul>
+      <% if @cocktail.doses.empty? %>
+        <p>No ingredient yet.</p>
+      <% else %>
 
-        <% @cocktail.doses.each do |dose|%>
+        <ul>
 
-          <li>
-            <p> <strong> <%= dose.ingredient.name %>: </strong> <%= dose.description %> </p>
-            <%= link_to cocktail_dose_path(@cocktail,dose), method: "delete" do %>
-              Delete
-            <% end %>
-          </li>
+          <% @cocktail.doses.each do |dose|%>
 
-        <% end %>
-      </ul>
+            <li>
+              <span> <strong> <%= dose.ingredient.name %>: </strong> <%= dose.description %> </span>
+              <%= link_to cocktail_dose_path(@cocktail,dose), method: "delete" do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </li>
 
-    <% end %>
+          <% end %>
+        </ul>
 
-    <%= link_to new_cocktail_dose_path(@cocktail), class: "add-dose" do %>
-      Add a new ingredient
-    <% end %>
+      <% end %>
+
+    </div>
+
+  <%= link_to new_cocktail_dose_path(@cocktail), class: "add-dose" do %>
+    <i class="fas fa-plus"></i> Add a new ingredient
+  <% end %>
+
 
   </div>
+
 
 </div>
 

@@ -2,24 +2,29 @@
 
   <div class="container">
     <h1>Master Cocktail</h1>
-    <p>Be traditional, be creative, be bold.</p>
-    <%= link_to new_cocktail_path class: "add-cocktail" do %>
+    <p> Be
+      <span id="banner-typed-text"></span>
+    </p>
+    <%= link_to new_cocktail_path, class: "btn-light" do %>
       Add a new cocktail
     <% end %>
   </div>
 
 </div>
 
-<div class="page-container">
+<div class="container">
 
-  <div class="cocktails-list">
+  <div class="grid-cocktails">
     <% @cocktails.each do |cocktail| %>
 
-      <div class="cocktail-card">
+      <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?<%= cocktail.name %>,cocktail)">
+        <div class="card-cocktail-name">
 
-        <%= link_to cocktail_path(cocktail) do %>
-          <%= cocktail.name %>
-        <% end %>
+          <%= link_to cocktail_path(cocktail) do %>
+            <%= cocktail.name %>
+          <% end %>
+
+        </div>
 
       </div>
 

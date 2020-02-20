@@ -10,3 +10,14 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-master-cocktail {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: $pink;
+  a {
+    color: white !important;
+    font-weight: bold;
+  }
+}
