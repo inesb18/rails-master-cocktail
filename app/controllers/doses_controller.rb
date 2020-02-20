@@ -5,11 +5,14 @@ class DosesController < ApplicationController
   end
 
   def create
-    dose = Dose.new(dose_description_and_ingredient)
-    cocktail = set_cocktail
-    dose.cocktail = cocktail
-    dose.save
-    redirect_to cocktail_path(cocktail)
+    @dose = Dose.new(dose_description_and_ingredient)
+    @cocktail = set_cocktail
+    @dose.cocktail = @cocktail
+    if @dose.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
   end
 
   def destroy
