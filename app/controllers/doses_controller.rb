@@ -4,12 +4,12 @@ class DosesController < ApplicationController
     @cocktail = set_cocktail
     @dose.cocktail = @cocktail
     @review = Review.new
+    @form_invisible = false
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      @form_invisible = false
-      render './cocktails/show'
+      # redirect_to cocktail_path(@cocktail)
+      @dose = Dose.new
     end
+    render './cocktails/show'
   end
 
   def destroy
