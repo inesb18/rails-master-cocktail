@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # resources :cocktails, only: [:index, :new, :create, :show]
   resources :cocktails, only: [:index, :new, :create, :show] do
     resources :doses, only: [:create, :destroy]
-  end
-  resources :cocktails do
     resources :reviews, only: [:create]
   end
 end
