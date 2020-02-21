@@ -10,6 +10,11 @@ require 'json'
 require 'open-uri'
 
 
+# Clean up
+Cocktail.destroy_all
+Ingredient.destroy_all
+
+
 # Ingredients
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
