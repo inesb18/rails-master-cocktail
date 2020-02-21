@@ -39,11 +39,19 @@
 
     <div id = "form" class="card-new-dose card-pink-border invisible">
 
+    <div class="d-flex justify-content-between">
+
       <h2>Add an ingredient</h2>
+      <div class="text-right clickable" id="close">
+        <i class="fas fa-times"></i>
+      </div>
+
+    </div>
+
 
       <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient", class: "select2"%>
-        <%= f.input :description %>
+        <%= f.input :description, label: "Amount" %>
         <%= f.button :submit, class:"btn-heavy" %>
       <% end %>
 
@@ -57,7 +65,7 @@
   <h2>Reviews</h3>
 
   <% if @cocktail.reviews.empty? %>
-    <p>No review yet</p>
+    <p>No reviews yet</p>
   <% else %>
 
     <div class="review-list mb-5">

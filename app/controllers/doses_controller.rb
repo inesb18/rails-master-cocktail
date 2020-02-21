@@ -3,10 +3,11 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_description_and_ingredient)
     @cocktail = set_cocktail
     @dose.cocktail = @cocktail
+    @review = Review.new
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render './cocktails/show'
     end
   end
 

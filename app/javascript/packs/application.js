@@ -23,16 +23,21 @@ import { loadDynamicBannerText } from '../components/banner';
 import 'select2/dist/css/select2.css';
 import { initSelect2 } from '../components/init_select2';
 
-import { makeFormAppear } from '../components/button';
 
-import { responsiveRatingStars } from '../components/stars'
+import { responsiveRatingStars } from '../components/stars';
+
+import { openContainer, closeContainer } from '../components/close_and_open'
+
 
 responsiveRatingStars();
-
-makeFormAppear();
 
 initSelect2();
 
 loadDynamicBannerText();
 
+const closeButton = document.getElementById("close");
+const openButton = document.getElementById("btn-new-ingredient");
+const form = document.getElementById("form");
 
+openContainer(closeButton, openButton, form);
+closeContainer(closeButton, openButton, form);

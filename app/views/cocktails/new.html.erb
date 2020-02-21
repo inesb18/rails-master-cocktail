@@ -14,12 +14,17 @@
     <h2>Add a cocktail</h2>
 
     <%= simple_form_for @cocktail do |f| %>
-      <%= f.input :name %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :name, autofocus: true%>
+      <label class="btn-light">
+        Click to add a photo!
+        <span style="display:none;">
+          <%= f.input :photo, as: :file %>
+        </span>
+      </label>
+      <br>
       <%= f.button :submit, class:"btn-heavy" %>
     <% end %>
 
   </div>
 
 </div>
-
