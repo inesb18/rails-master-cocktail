@@ -6,6 +6,7 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
+    @review = Review.new
   end
 
   def new
@@ -13,7 +14,6 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    raise
     @cocktail = Cocktail.new(cocktail_name)
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)

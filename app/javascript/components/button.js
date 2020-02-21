@@ -4,8 +4,8 @@ const makeFormAppear = () => {
   if (buttonAddIngredient) {
     buttonAddIngredient.addEventListener('click',(event) => {
       const form = document.getElementById("form");
-      form.classList.remove('hide');
-      event.currentTarget.classList.add('hide');
+      form.classList.remove('invisible');
+      event.currentTarget.classList.add('invisible');
     })
   }
 };

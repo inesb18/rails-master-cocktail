@@ -14,10 +14,16 @@
 .navbar-master-cocktail {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background: $pink;
   a {
+    text-decoration: none;
     color: white !important;
     font-weight: bold;
+  }
+  a.master-cocktails-link {
+    font-size: 30px;
+    font-family: $headers-font;
   }
 }

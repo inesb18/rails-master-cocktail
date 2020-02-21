@@ -25,6 +25,9 @@ import { initSelect2 } from '../components/init_select2';
 
 import { makeFormAppear } from '../components/button';
 
+import { responsiveRatingStars } from '../components/stars'
+
+responsiveRatingStars();
 
 makeFormAppear();
 
