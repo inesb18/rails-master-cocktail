@@ -52,25 +52,17 @@
 
   </div>
 
-</div>
+  <div class="reviews card-pink-border mt-5">
 
-<div class="reviews">
-
-  <div class="review-list-banner">
-    <h3>Reviews</h3>
-
-  </div>
+  <h2>Reviews</h3>
 
   <% if @cocktail.reviews.empty? %>
-
     <p>No review yet</p>
-
   <% else %>
 
-    <div class="review-list">
+    <div class="review-list mb-5">
 
       <ul>
-
         <% @cocktail.reviews.each do |review| %>
 
           <li class="review-card">
@@ -90,14 +82,13 @@
           </li>
 
         <% end %>
-
       </ul>
 
     </div>
 
   <% end %>
 
-  <h6>Add your review</h6>
+  <h4>Add your review</h4>
 
   <div class="creation-review-form review-card">
     <%= simple_form_for [@cocktail,@review] do |f| %>
@@ -115,7 +106,7 @@
         <%= f.input :content, class: 'form-control' %>
       </div>
       <br>
-      <%= f.submit class: 'button' %>
+      <%= f.submit class: 'btn-light' %>
     <% end %>
   </div>
 
@@ -123,6 +114,9 @@
 
 </div>
 
+
+
+</div>
 
 
 
