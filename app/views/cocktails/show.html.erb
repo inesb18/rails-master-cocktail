@@ -1,4 +1,4 @@
-<div class="banner-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?<% @cocktail.name.split().join(',') %>,cocktail)">
+<div class="banner-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 600, width: 800, crop: :fill %>')">
   <h1> <%= @cocktail.name %> </h1>
 </div>
 

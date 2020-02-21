@@ -25,10 +25,12 @@ Ingredient.create(name: 'Mint')
 Ingredient.create(name: 'Club soda')
 Ingredient.create(name: 'Cachaça')
 
-
 # Mojito cocktail
 
 mojito = Cocktail.create(name: 'Mojito')
+
+file = URI.open('https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1901&q=80')
+mojito.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 Dose.create(description: '20 leaves',
             cocktail: mojito,
@@ -73,7 +75,10 @@ Dose.create(description: 'some cubes',
             cocktail: cosmopolitan,
             ingredient: Ingredient.where(name: 'Ice').first)
 
-# Cosmopolitan cocktail
+file = URI.open('https://images.unsplash.com/photo-1556881261-e41e8db21055?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+cosmopolitan.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+# Caipirinha cocktail
 
 caipirinha = Cocktail.create(name: 'Caipirinha')
 
@@ -89,3 +94,6 @@ Dose.create(description: '200ml',
 Dose.create(description: 'few handfuls (crushed)',
             cocktail: caipirinha,
             ingredient: Ingredient.where(name: 'Ice').first)
+
+file = URI.open('https://cdn.pixabay.com/photo/2020/01/21/11/36/caipirinha-4782694_960_720.jpg')
+caipirinha.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
