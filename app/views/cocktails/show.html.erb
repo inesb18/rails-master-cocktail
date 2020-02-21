@@ -30,14 +30,14 @@
 
       <% end %>
 
-      <div id="btn-new-ingredient">
+      <div id="btn-new-ingredient" class="<%= "invisible" unless @form_invisible %>">
        <i class="fas fa-plus"></i> Add a new ingredient
       </div>
 
 
     </div>
 
-    <div id = "form" class="card-new-dose card-pink-border invisible">
+    <div id = "form" class="card-new-dose card-pink-border <%= "invisible" if @form_invisible %>">
 
     <div class="d-flex justify-content-between">
 

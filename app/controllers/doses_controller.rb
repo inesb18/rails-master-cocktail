@@ -7,6 +7,7 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
+      @form_invisible = false
       render './cocktails/show'
     end
   end

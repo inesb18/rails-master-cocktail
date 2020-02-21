@@ -6,6 +6,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @form_invisible = true
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
     @review = Review.new
