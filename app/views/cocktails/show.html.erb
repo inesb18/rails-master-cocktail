@@ -1,4 +1,4 @@
-<div class="banner-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?<%= @cocktail.name %>,cocktail)">
+<div class="banner-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?<% @cocktail.name %>,cocktail)">
   <h1> <%= @cocktail.name %> </h1>
 </div>
 
@@ -6,7 +6,7 @@
 
   <div class="grid-ingredients-cocktail">
 
-    <div class="card-ingredients-of-cocktail card-grid-ingredients-cocktail">
+    <div class="card-ingredients-of-cocktail card-pink-border">
 
       <h2>Ingredients</h2>
 
@@ -30,15 +30,30 @@
 
       <% end %>
 
+      <div id="btn-new-ingredient">
+       <i class="fas fa-plus"></i> Add a new ingredient
+      </div>
+
+
     </div>
 
-  <%= link_to new_cocktail_dose_path(@cocktail), class: "add-dose" do %>
-    <i class="fas fa-plus"></i> Add a new ingredient
-  <% end %>
+    <div id = "form" class="card-new-dose card-pink-border hide">
+
+      <h2>Add an ingredient</h2>
+
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient", class: "select2"%>
+        <%= f.button :submit, class:"btn-heavy" %>
+      <% end %>
+
+    </div>
 
 
   </div>
 
-
 </div>
+
+
+
 

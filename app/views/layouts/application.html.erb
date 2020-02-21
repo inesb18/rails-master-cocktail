@@ -13,24 +13,30 @@
 
   <body>
 
-    <div class="navbar-master-cocktail">
+    <div class="content">
 
-      <%= link_to cocktails_path class: "master-cocktails-list" do %>
-        Master cocktails
-      <% end %>
-      <%= link_to new_cocktail_path class: "add-cocktail" do %>
-        Add a new cocktail
-      <% end %>
+      <div class="navbar-master-cocktail">
+
+        <%= link_to cocktails_path class: "master-cocktails-list" do %>
+          Master cocktails
+        <% end %>
+        <%= link_to new_cocktail_path class: "add-cocktail" do %>
+          Add a new cocktail
+        <% end %>
+
+      </div>
+
+      <%= yield %>
+
+
+      </div>
 
     </div>
 
-    <%= yield %>
 
-    </div>
-
-    <div class="footer-master-cocktail">
+    <footer class="footer-sticky footer-master-cocktail">
       Made with <i class="fas fa-heart"></i> at Le Wagon
-    </div>
+    </footer>
 
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->

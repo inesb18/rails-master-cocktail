@@ -1,9 +1,4 @@
 class DosesController < ApplicationController
-  def new
-    @dose = Dose.new
-    @cocktail = set_cocktail
-  end
-
   def create
     @dose = Dose.new(dose_description_and_ingredient)
     @cocktail = set_cocktail

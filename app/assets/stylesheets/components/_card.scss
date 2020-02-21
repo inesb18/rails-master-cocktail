@@ -20,6 +20,12 @@
   }
 }
 
+.card-pink-border {
+  border-radius: 12px;
+  padding: 40px 40px;
+  border: 1px solid $pink;
+}
+
 .grid-cocktails {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

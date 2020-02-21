@@ -23,6 +23,13 @@ import { loadDynamicBannerText } from '../components/banner';
 import 'select2/dist/css/select2.css';
 import { initSelect2 } from '../components/init_select2';
 
+import { makeFormAppear } from '../components/button';
+
+
+makeFormAppear();
+
 initSelect2();
 
 loadDynamicBannerText();
+
+

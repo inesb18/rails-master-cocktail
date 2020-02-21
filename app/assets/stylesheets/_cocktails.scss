@@ -8,13 +8,14 @@
   align-items: start;
   grid-gap: 100px;
   justify-items: stretch;
-  .card-grid-ingredients-cocktail {
-    border-radius: 12px;
-    padding: 40px 40px;
-    border: 1px solid $pink;
-  }
   ul {
     list-style-type: circle;
-    margin-bottom: 0;
+    margin-bottom: 25px;
   }
+}
+
+#btn-new-ingredient {
+  color: $green;
+  font-weight: bold;
+  cursor: pointer;
 }
