@@ -42,8 +42,9 @@
       <h2>Add an ingredient</h2>
 
       <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.input :description %>
         <%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient", class: "select2"%>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
         <%= f.button :submit, class:"btn-heavy" %>
       <% end %>
 
