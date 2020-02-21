@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
@@ -15,6 +17,10 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_name)
+    unless @cocktail.photo.attached?
+      file = URI.open("https://source.unsplash.com/1600x900/?cocktail,#{@cocktail.name.split().join(',')}")
+      @cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    end
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
